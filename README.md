@@ -1,6 +1,6 @@
 # Speech-Based Machine Learning for Interview Outcome Prediction
 
-This repository contains the complete implementation of a machine learning project focused on the prediction of interview outcomes using multimodal data. The project specifically targets the estimation of two annotated metrics — **Overall Performance** and **Excitement Level** — based on linguistic and prosodic cues from the [MIT Interview Dataset](https://people.csail.mit.edu/mnaim/data.html).
+This repository contains the complete implementation of a machine learning project focused on the prediction of interview outcomes using multimodal data. The project specifically targets the estimation of two annotated metrics — **Overall Performance** and **Excitement Level** — based on linguistic and prosodic cues from the MIT Interview Dataset.
 
 
 ## Repository Contents
