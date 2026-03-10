@@ -9,9 +9,11 @@ This system models interview performance using **speech transcripts** and **pros
 
 The project explores **multimodal machine learning**, combining Natural Language Processing and acoustic speech analysis, while also incorporating **explainable AI techniques** to understand why the models make certain predictions.
 
+ The Overall Picture:
 
+<img width="987" height="807" alt="image" src="https://github.com/user-attachments/assets/8204d37a-411a-4bd1-a0d6-162086a3caca" />
 
-# Project Motivation
+## Project Motivation
 
 In real interviews, evaluation is influenced by multiple factors. Interviewers consider:
 
@@ -25,13 +27,13 @@ The goal is to build models that not only predict interview scores, but also pro
 
 
 
-# Dataset
+## Dataset
 
 This project uses the **MIT Interview Dataset**, which contains recorded interviews along with expert annotations.
 
 The dataset consists of three main components:
 
-## Transcripts
+#### Transcripts
 <img width="1412" height="503" alt="image" src="https://github.com/user-attachments/assets/43329db9-d358-4f5d-a185-6c3276325006" />
 
 Text transcripts of the interview conversations between interviewer and candidate.
@@ -45,7 +47,7 @@ Candidate: I recently worked on a machine learning system where I designed a mod
 
 
 
-## Prosodic Features
+#### Prosodic Features
 
 <img width="1354" height="503" alt="image" src="https://github.com/user-attachments/assets/8593fc3a-b2c2-4956-8a9c-6710333e7f60" />
 
@@ -63,7 +65,7 @@ Examples of prosodic features include:
 
 
 
-## Annotated Interview Scores
+#### Annotated Interview Scores
 <img width="220" height="503" alt="image" src="https://github.com/user-attachments/assets/654e2f45-5ac8-47ed-8648-a70999b4edde" />
 
 Each interview is annotated by human evaluators who assign scores for:
@@ -78,7 +80,7 @@ These scores serve as the **target variables** for the machine learning models.
 
 
 
-# Data Processing Pipeline
+## Data Processing Pipeline
 
 The project follows a structured data processing workflow.
 
@@ -97,7 +99,7 @@ The main stages of the pipeline are:
 
 
 
-# Transcript Preprocessing
+## Transcript Preprocessing
 
 Transcript data is processed using **spaCy** to extract meaningful linguistic features.
 
@@ -113,23 +115,23 @@ Additionally, the transcripts are separated so that only **candidate responses**
 
 From the cleaned transcripts, several linguistic features are extracted.
 
-### TF-IDF Features
+###### TF-IDF Features
 
 Term Frequency–Inverse Document Frequency vectors are used to represent important words in the candidate responses.
 
 TF-IDF highlights words that are important within a transcript but not overly common across all transcripts.
 
-### Part-of-Speech (POS) Features
+###### Part-of-Speech (POS) Features
 
 Using spaCy, the frequency of grammatical structures such as nouns, verbs, and adjectives is extracted to capture patterns in communication style.
 
-### Sentiment Features
+###### Sentiment Features
 
 Sentiment scores are computed using **VADER sentiment analysis**, providing indicators of positive or negative emotional tone.
 
 
 
-# Prosodic Feature Processing
+## Prosodic Feature Processing
 
 Prosodic features are derived from the audio recordings of the interviews.
 
@@ -147,7 +149,7 @@ These signals help capture aspects such as **fluency, confidence, and engagement
 
 
 
-# Feature Integration
+## Feature Integration
 
 After extracting both linguistic and prosodic features, the two feature sets are merged into a **multimodal dataset**.
 
@@ -161,13 +163,13 @@ This combined representation enables the models to learn from both **language co
 
 
 
-# Modeling Approaches
+## Modeling Approaches
 <img width="1051" height="571" alt="Screenshot 2026-03-10 at 1 13 02 AM" src="https://github.com/user-attachments/assets/b1c04d9e-15c6-4a04-a1af-0aed818d157a" />
 
 
 Multiple machine learning models are explored to evaluate different modeling strategies.
 
-## Random Forest Regressor
+#### Random Forest Regressor
 
 <img width="565" height="275" alt="Screenshot 2026-03-10 at 1 17 32 AM" src="https://github.com/user-attachments/assets/5e66f04b-b68b-4d14-b9bd-0d99f1a3357b" />
 
@@ -186,7 +188,7 @@ Random Forest models serve as a strong baseline for predicting interview outcome
 
 
 
-## Multi-Layer Perceptron (MLP)
+#### Multi-Layer Perceptron (MLP)
 <img width="504" height="491" alt="Screenshot 2026-03-10 at 1 18 16 AM" src="https://github.com/user-attachments/assets/ab40eb38-9f79-4adb-91ab-0164f5b7e843" />
 
 A feedforward neural network is used to capture more complex interactions between features.
@@ -201,7 +203,7 @@ MLP models are particularly useful when combining **multiple feature modalities*
 
 
 
-## GPT-2 Prompt-Based Scoring
+#### GPT-2 Prompt-Based Scoring
 
 In addition to traditional regression models, this project explores a **language model approach** using GPT-2.
 
@@ -222,11 +224,11 @@ This approach demonstrates how large language models can provide **human-readabl
 
 
 
-# Model Evaluation
+## Model Evaluation
 
 All regression models are evaluated using standard performance metrics.
 
-## Pearson Correlation
+#### Pearson Correlation
 
 Measures the correlation between predicted scores and actual human-annotated scores.
 
@@ -234,7 +236,7 @@ Higher correlation indicates stronger alignment with human judgments.
 
 
 
-## Mean Absolute Error (MAE)
+#### Mean Absolute Error (MAE)
 
 Measures the average magnitude of prediction errors.
 
@@ -242,13 +244,13 @@ Lower values indicate more accurate predictions.
 
 
 
-## Relative Error
+#### Relative Error
 
 A normalized metric that helps compare errors across different score ranges.
 
 
 
-# Explainable Machine Learning
+## Explainable Machine Learning
 
 Understanding why a model makes a prediction is important for real-world deployment.
 
@@ -276,9 +278,13 @@ Explainability helps ensure that predictions are **transparent and meaningful**.
 
 
 
-# Key Insights
+## Key Insights
 
-The experiments reveal several important observations.
+
+The experiments reveal several important observations. 
+
+<img width="503" height="292" alt="image" src="https://github.com/user-attachments/assets/4aa2bf2a-9872-4916-a2cf-dce37458d2cf" />
+
 
 Multimodal models that combine transcript and prosodic features consistently outperform models using only one modality.
 
@@ -290,7 +296,7 @@ Explainable AI methods provide additional insights into how different behavioral
 
 
 
-# Technologies Used
+## Technologies Used
 
 Python is used as the primary programming language for the project.
 
@@ -304,6 +310,3 @@ Key libraries include:
 - pandas and NumPy for data manipulation
 - matplotlib and seaborn for visualization
 
-
-
-# Repository Structure
